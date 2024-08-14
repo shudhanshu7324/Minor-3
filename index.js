@@ -1,26 +1,71 @@
-const myInput = document.querySelector('.input');
-console.log(myInput);
+const input = document.getElementById('input');
+console.log(input.value);
 
-let str = '0123';
-myInput.textContent = str;
+function inputValue(a){
+    input.value += a;
+}
 
+function deleteValue(){
+    input.value = input.value.slice(0,-1);
+}
 
-const reset = document.getElementById('reset');
-const equal = document.getElementById('equals');
-const del = document.getElementById('del');
-
-del.addEventListener('click' , ()=>{
-    if(str != '0'){
-        str = str.slice(0,str.length-1)
-    }  
-    myInput.textContent = str;
-})
-
-myInput.textContent = str;
-
-reset.addEventListener('click' ,() => {
-    myInput.textContent = 0;
-})
+function clearInput(){
+    input.value = '';
+}
 
 
 
+function calculate() {
+    
+    try {
+        input.value = eval(input.value);
+    } catch (error) {
+        input.value = 'Error';
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function startBlinking() {
+//     if (myInput.innerText === "") {
+//         myInput.innerText = "0";
+//         setTimeout(() => {
+//             myInput.innerText = "";
+//             console.log("exe");
+            
+//         }, 1000);
+//     }
+// }
+
+// setInterval(startBlinking, 500);
