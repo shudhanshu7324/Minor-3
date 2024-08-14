@@ -2,7 +2,11 @@ const input = document.getElementById('input');
 console.log(input.value);
 
 function inputValue(a){
-    input.value += a;
+    if(input.value == '' && (a == '*' || a =='/')){
+
+    }else{
+        input.value += a;
+    }
 }
 
 function deleteValue(){
